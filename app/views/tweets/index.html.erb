@@ -1,0 +1,40 @@
+<h1>Listing tweets</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Status</th>
+    <th>Message</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<%= form_for(@tweet, :url => "user") do |f| %>
+  <div class="field">
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Buscar"%>
+  </div>
+<% end %>
+
+#Esto lo sacamos para que pueda ejecutar la página
+#<% @tweets.each do |tweet| %>
+#  <tr>
+#    <td><%= tweet.user %></td>
+#    <td><%= tweet.status %></td>
+#    <td><%= tweet.message %></td>
+#    <td><%= link_to 'Show', tweet %></td>
+#    <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
+#    <td><%= link_to 'Destroy', tweet, confirm: 'Are you sure?', method: :delete %></td>
+#  </tr>
+<% end %>
+
+</table>
+
+<br />
+
+<%= link_to 'New Tweet', new_tweet_path %>
